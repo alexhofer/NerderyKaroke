@@ -8,7 +8,7 @@ namespace NerderyKaroke.Models
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Singer Name")]
+        [DisplayName("Singer Name(s)")]
         [MaxLength(70)]
         public string SingerName { get; set; }
 
