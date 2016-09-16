@@ -157,7 +157,7 @@
     </Compile>
     <Compile Include="Models\SongModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\SongRepository.cs" />
+    <Compile Include="Repository\JSONService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-dark.css" />
@@ -209,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -12,7 +12,7 @@ namespace NerderyKaroke.Controllers
     {
         public ActionResult Index()
         {
-            var model = SongRepository.SongList;
+            var model = JSONService.GetSongList();
             return View(model);
         }
 

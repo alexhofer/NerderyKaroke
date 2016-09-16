@@ -22,8 +22,8 @@ namespace NerderyKaroke.Controllers
         {
             try
             {
-                model.Id = SongRepository.SongList.Count + 1;
-                SongRepository.SongList.Add(model);
+                model.Id = JSONService.GetSongList().Count + 1;
+                JSONService.AddEntry(model);
 
                 return RedirectToAction("Index", "Home");
             }

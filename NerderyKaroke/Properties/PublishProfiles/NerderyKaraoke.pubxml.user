@@ -46,7 +46,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/23/2012 15:23:58</publishTime>
     </File>
     <File Include="bin/NerderyKaroke.dll">
-      <publishTime>09/15/2016 21:54:26</publishTime>
+      <publishTime>09/16/2016 01:13:00</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>08/03/2014 20:33:56</publishTime>
@@ -145,7 +145,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/14/2016 20:49:52</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/14/2016 20:31:53</publishTime>
+      <publishTime>09/16/2016 00:17:15</publishTime>
     </File>
     <File Include="Scripts/ai.0.22.9-build00167.js">
       <publishTime>09/14/2016 20:31:53</publishTime>
@@ -196,7 +196,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/15/2016 01:01:54</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>09/15/2016 01:11:16</publishTime>
+      <publishTime>09/16/2016 01:10:37</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>09/15/2016 00:15:34</publishTime>
@@ -226,7 +226,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/14/2016 20:31:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/15/2016 21:54:27</publishTime>
+      <publishTime>09/16/2016 01:13:00</publishTime>
     </File>
   </ItemGroup>
 </Project>

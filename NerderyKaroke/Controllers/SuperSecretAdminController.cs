@@ -13,14 +13,14 @@ namespace NerderyKaroke.Controllers
         // GET: SuperSecretAdmin
         public ActionResult Index()
         {
-            var model = SongRepository.SongList;
+            var model = JSONService.GetSongList();
             return View(model);
         }
 
         // GET: SuperSecretAdmin/Edit/5
         public ActionResult Edit(int id)
         {
-            var model = SongRepository.SongList.Where(x => x.Id == id).FirstOrDefault();
+            var model = JSONService.GetSongList().Where(x => x.Id == id).FirstOrDefault();
             return View(model);
         }
 
@@ -30,12 +30,7 @@ namespace NerderyKaroke.Controllers
         {
             try
             {
-                var model = SongRepository.SongList.Where(x => x.Id == id).FirstOrDefault();
-                if (model != null)
-                {
-                    model.SingerName = editedModel.SingerName;
-                    model.SongTitle = editedModel.SongTitle;
-                }
+                JSONService.UpdateEntry(id, editedModel);
 
                 return RedirectToAction("Index");
             }
@@ -48,7 +43,7 @@ namespace NerderyKaroke.Controllers
         // GET: SuperSecretAdmin/Delete/5
         public ActionResult Delete(int id)
         {
-            var model = SongRepository.SongList.Where(x => x.Id == id).FirstOrDefault();
+            var model = JSONService.GetSongList().Where(x => x.Id == id).FirstOrDefault();
             return View(model);
         }
 
@@ -58,8 +53,7 @@ namespace NerderyKaroke.Controllers
         {
             try
             {
-                var itemToRemove = SongRepository.SongList.Single(x => x.Id == id);
-                SongRepository.SongList.Remove(itemToRemove);
+                JSONService.DeleteEntry(id);
 
                 return RedirectToAction("Index");
             }
@@ -71,7 +65,7 @@ namespace NerderyKaroke.Controllers
 
         public ActionResult DeleteAll()
         {
-            SongRepository.SongList.Clear();
+            JSONService.DeleteAll();
             return RedirectToAction("Index");
         }
     }
