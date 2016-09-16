@@ -48,6 +48,6 @@ C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke
 C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\bin\System.Web.WebPages.Razor.xml
 C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\bin\Antlr3.Runtime.pdb
 C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\bin\Newtonsoft.Json.xml
-C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\obj\Debug\NerderyKaroke.csprojResolveAssemblyReference.cache
-C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\obj\Debug\NerderyKaroke.dll
-C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\obj\Debug\NerderyKaroke.pdb
+C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\obj\Release\NerderyKaroke.dll
+C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\obj\Release\NerderyKaroke.pdb
+C:\Users\osiru\documents\visual studio 2015\Projects\NerderyKaroke\NerderyKaroke\obj\Release\NerderyKaroke.csprojResolveAssemblyReference.cache
