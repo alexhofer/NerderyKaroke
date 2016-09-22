@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerderyKaroke", "NerderyKaroke\NerderyKaroke.csproj", "{D87CFAE6-D1CA-4A7D-82A4-AD21B2CCFF31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerderyKaraoke.Core.Services", "NerderyKaraoke.Core.Services\NerderyKaraoke.Core.Services.csproj", "{10B500B8-6BC4-47AA-B863-48CEEB01BD0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerderyKaraoke.Core.Data", "NerderyKaraoke.Core.Data\NerderyKaraoke.Core.Data.csproj", "{5BB46B35-87B1-480F-808C-44E26BA0A3DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B8F54597-A2BB-49EE-82CC-B96A0819D8B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +21,20 @@ Global
 		{D87CFAE6-D1CA-4A7D-82A4-AD21B2CCFF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D87CFAE6-D1CA-4A7D-82A4-AD21B2CCFF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D87CFAE6-D1CA-4A7D-82A4-AD21B2CCFF31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B500B8-6BC4-47AA-B863-48CEEB01BD0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B500B8-6BC4-47AA-B863-48CEEB01BD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B500B8-6BC4-47AA-B863-48CEEB01BD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B500B8-6BC4-47AA-B863-48CEEB01BD0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB46B35-87B1-480F-808C-44E26BA0A3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB46B35-87B1-480F-808C-44E26BA0A3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB46B35-87B1-480F-808C-44E26BA0A3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB46B35-87B1-480F-808C-44E26BA0A3DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10B500B8-6BC4-47AA-B863-48CEEB01BD0C} = {B8F54597-A2BB-49EE-82CC-B96A0819D8B1}
+		{5BB46B35-87B1-480F-808C-44E26BA0A3DA} = {B8F54597-A2BB-49EE-82CC-B96A0819D8B1}
 	EndGlobalSection
 EndGlobal

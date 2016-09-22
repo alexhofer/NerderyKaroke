@@ -1,6 +1,7 @@
 ﻿using NerderyKaroke.Models;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -10,47 +11,47 @@ namespace NerderyKaroke.Repository
 {
     public static class JSONService
     {
-        public static List<SongModel> GetSongList()
+        public static List<Song> GetSongList()
         {
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string FILEPATH = basePath + @"\Data\songList.json";
 
             var stream = File.ReadAllText(FILEPATH);
 
-            var songList = JsonConvert.DeserializeObject<List<SongModel>>(stream);
+            var songList = JsonConvert.DeserializeObject<List<Song>>(stream);
 
             if (songList != null)
                 return songList;
             else
-                return new List<SongModel>();
+                return new List<Song>();
 
         }
 
-        public static void AddEntry(SongModel model)
+        public static void AddEntry(Song model)
         {
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string FILEPATH = basePath + @"\Data\songList.json";
 
             var stream = File.ReadAllText(FILEPATH);
 
-            List<SongModel> songList = JsonConvert.DeserializeObject<List<SongModel>>(stream);
+            List<Song> songList = JsonConvert.DeserializeObject<List<Song>>(stream);
 
             if (songList == null)
-                songList = new List<SongModel>();
+                songList = new List<Song>();
 
             songList.Add(model);
 
             File.WriteAllText(FILEPATH, JsonConvert.SerializeObject(songList));
         }
 
-        public static void UpdateEntry(int id, SongModel model)
+        public static void UpdateEntry(int id, Song model)
         {
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string FILEPATH = basePath + @"\Data\songList.json";
 
             var stream = File.ReadAllText(FILEPATH);
 
-            var songList = JsonConvert.DeserializeObject<List<SongModel>>(stream);
+            var songList = JsonConvert.DeserializeObject<List<Song>>(stream);
 
             var editedModel = songList.Where(x => x.Id == id).FirstOrDefault();
 
@@ -70,7 +71,7 @@ namespace NerderyKaroke.Repository
 
             var stream = File.ReadAllText(FILEPATH);
 
-            var songList = JsonConvert.DeserializeObject<List<SongModel>>(stream);
+            var songList = JsonConvert.DeserializeObject<List<Song>>(stream);
 
             var itemToRemove = songList.Single(x => x.Id == id);
             songList.Remove(itemToRemove);

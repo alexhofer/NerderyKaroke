@@ -18,7 +18,7 @@ namespace NerderyKaroke.Controllers
 
         // POST: Submit/Create
         [HttpPost]
-        public ActionResult Create(SongModel model)
+        public ActionResult Create(Song model)
         {
             try
             {
