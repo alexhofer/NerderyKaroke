@@ -1,11 +1,9 @@
+using System.Data.Entity;
+
 using NerderyKaraoke.Core.Data.Models;
 
 namespace NerderyKaraoke.Core.Data
 {
-	using System;
-	using System.Data.Entity;
-	using System.ComponentModel.DataAnnotations.Schema;
-	using System.Linq;
 
 	public partial class NerderyKaraokeDbContext : DbContext
 	{
@@ -20,6 +18,7 @@ namespace NerderyKaraoke.Core.Data
 		}
 
 		public IDbSet<SongRequest> Songs { get; set; }
+		public IDbSet<UserRole> UserRoles { get; set; }
 
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
