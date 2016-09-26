@@ -1,0 +1,50 @@
+﻿@using NerderyKaraoke.UI.Models.Shared;
+
+@model IEnumerable<SongRequestViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Index</h2>
+
+@if (Model.Any())
+{
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(m => m.SingerName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.SongTitle)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.YouTubeUrl)
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(m => item.SingerName)
+				</td>
+				<td>
+					@Html.DisplayFor(m => item.SongTitle)
+				</td>
+				<td>
+					<a href="@item.YouTubeUrl">
+						@Html.DisplayFor(m => item.YouTubeUrl)
+					</a>
+				</td>
+			</tr>
+		}
+
+	</table>
+}
+else
+{
+	<h3>No songs found. Go submit one already!</h3>
+}
+
+@Html.ActionLink("Submit Song", "Create", "SongRequest", null, new { @class = "btn btn-info" })
