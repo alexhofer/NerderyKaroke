@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+
 using NerderyKaraoke.Core.Data.Models;
-using Newtonsoft.Json.Linq;
 
 namespace NerderyKaraoke.UI.Extensions
 {

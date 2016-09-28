@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NerderyKaraoke.Core.Data.Models;
 
 namespace NerderyKaraoke.Core.Data.Repositories

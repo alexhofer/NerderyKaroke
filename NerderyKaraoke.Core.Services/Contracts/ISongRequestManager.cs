@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+
 using NerderyKaraoke.Core.Data.Models;
 
 namespace NerderyKaraoke.Core.Services

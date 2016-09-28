@@ -19,7 +19,6 @@ namespace NerderyKaraoke.UI.Providers
 			_adminRepository = new UserRoleRepository(context);
 		}
 
-
 		public override bool IsUserInRole(string username, string roleName)
 		{
 			var entry = _adminRepository.Find(username, roleName);

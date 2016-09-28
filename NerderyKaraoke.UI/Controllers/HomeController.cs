@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
+
 using AutoMapper;
 
 using NerderyKaraoke.Core.Services;
@@ -10,6 +10,7 @@ using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Controllers
 {
+	[AllowAnonymous]
 	public class HomeController : Controller
 	{
 		private readonly ISongRequestManager _songRequestManager;

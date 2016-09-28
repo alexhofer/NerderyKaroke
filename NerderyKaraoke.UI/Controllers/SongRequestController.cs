@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+
 using AutoMapper;
+
 using NerderyKaraoke.Core.Data.Models;
 using NerderyKaraoke.Core.Extensions;
 using NerderyKaraoke.Core.Services;

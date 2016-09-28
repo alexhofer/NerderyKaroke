@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Autofac;
+﻿using Autofac;
 using AutoMapper;
+
 using NerderyKaraoke.UI.Profiles;
 
 namespace NerderyKaraoke.UI.BindingModules

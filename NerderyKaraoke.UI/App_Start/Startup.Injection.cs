@@ -1,9 +1,13 @@
-﻿using System.Web.Mvc;
+﻿using System.Reflection;
+using System.Web.Mvc;
+
+using Owin;
+
 using Autofac;
 using Autofac.Integration.Mvc;
+
 using NerderyKaraoke.Core;
 using NerderyKaraoke.UI.BindingModules;
-using Owin;
 
 namespace NerderyKaraoke.UI
 {
@@ -14,7 +18,8 @@ namespace NerderyKaraoke.UI
 			var builder = new ContainerBuilder();
 
 			// Controllers
-			builder.RegisterControllers(typeof (MvcApplication).Assembly);
+			var bindAssembly = Assembly.GetExecutingAssembly();
+			builder.RegisterControllers(bindAssembly);
 
 			DependencyRegistrar.RegisterDependencies(builder,
 				new RepositoryModule(),
