@@ -214,10 +214,13 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SongRequestController.cs" />
+    <Compile Include="Extensions\SortingExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Shared\SongRequestViewModel.cs" />
+    <Compile Include="Models\SongRequest\CreateViewModel.cs" />
+    <Compile Include="Models\SongRequest\DeleteViewModel.cs" />
+    <Compile Include="Models\SongRequest\EditViewModel.cs" />
     <Compile Include="Profiles\ViewModelMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AdminRoleProvider.cs" />
@@ -287,9 +290,15 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\SongRequest\Create.cshtml" />
     <None Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SongRequest.CreateViewModel.cshtml" />
+    <Content Include="Views\SongRequest\Delete.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SongRequest.EditViewModel.cshtml" />
+    <Content Include="Views\SongRequest\DeleteAll.cshtml" />
+    <None Include="Views\SongRequest\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Home\" />
+    <Folder Include="Models\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

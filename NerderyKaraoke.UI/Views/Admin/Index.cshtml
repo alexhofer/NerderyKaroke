@@ -1,5 +1,48 @@
-﻿@{
+﻿@model IEnumerable<NerderyKaraoke.UI.Models.SongRequest.EditViewModel>
+
+@{
 	ViewBag.Title = "Admin";
 }
 
-<h2>Admin Screen</h2>
+<h2>Admin</h2>
+
+@if (Model.Any())
+{
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(m => m.SingerName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.SongTitle)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.YouTubeUrl)
+			</th>
+			<th>
+
+			</th>
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(m => item.SingerName)
+				</td>
+				<td>
+					@Html.DisplayFor(m => item.SongTitle)
+				</td>
+				<td>
+					@Html.DisplayFor(m => item.YouTubeUrl)
+				</td>
+				<td>
+					@Html.ActionLink("Edit", "Edit", "SongRequest", new {id = item.Id}, null) |
+					@Html.ActionLink("Delete", "Delete", "SongRequest", new {id = item.Id}, null)
+				</td>
+			</tr>
+		}
+	</table>
+
+	@Html.ActionLink("Delete All Songs", "DeleteAll", "SongRequest", null, new { @class="btn btn-danger" })
+}
+

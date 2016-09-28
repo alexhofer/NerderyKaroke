@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Configuration.Provider;
 using System.Linq;
-using System.Web.Mvc;
 using System.Web.Security;
 
 using NerderyKaraoke.Core.Data;
 using NerderyKaraoke.Core.Data.Models;
+using NerderyKaraoke.Core.Data.Repositories;
 
 namespace NerderyKaraoke.UI.Providers
 {
@@ -15,10 +15,8 @@ namespace NerderyKaraoke.UI.Providers
 
 		public AdminRoleProvider()
 		{
-			_adminRepository = DependencyResolver.Current.GetService<IRepository<UserRole>>();
-
-			if (_adminRepository == null)
-				throw new NullReferenceException("Admin repository not found");
+			var context = new NerderyKaraokeDbContext();
+			_adminRepository = new UserRoleRepository(context);
 		}
 
 

@@ -1,43 +1,19 @@
-﻿@model NerderyKaraoke.UI.Models.Shared.SongRequestViewModel
+﻿@using NerderyKaraoke.UI.Models.SongRequest
+@model CreateViewModel
 @{
 	ViewBag.Title = "Create";
 }
 
 <h2>Submit a Song!</h2>
 
-@using (Html.BeginForm("Create", "SongRequest"))
+@using (Html.BeginForm("Create", "SongRequest", FormMethod.Post))
 {
 	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
 		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-		<div class="form-group">
-			@Html.LabelFor(m => m.SingerName, new { @class = "control-label col-md-2" })
-
-			<div class="col-md-10">
-				@Html.EditorFor(m => m.SingerName, new { htmlAttribudes = new { @class = "form-control" } })
-				@Html.ValidationMessageFor(m => m.SingerName, "", new {@class="text-danger"} )
-			</div>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.SongTitle, new { @class = "control-label col-md-2" })
-
-			<div class="col-md-10">
-				@Html.EditorFor(m => m.SongTitle, new { htmlAttribudes = new { @class = "form-control" } })
-				@Html.ValidationMessageFor(m => m.SongTitle, "", new { @class = "text-danger" })
-			</div>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.YouTubeUrl, new { @class = "control-label col-md-2" })
-
-			<div class="col-md-10">
-				@Html.EditorFor(m => m.YouTubeUrl, new { htmlAttribudes = new { @class = "form-control" } })
-				@Html.ValidationMessageFor(m => m.YouTubeUrl, "", new { @class = "text-danger" })
-			</div>
-		</div>
+		@Html.EditorForModel("SongRequest.CreateViewModel")
 
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-10">

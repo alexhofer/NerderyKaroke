@@ -15,14 +15,10 @@ namespace NerderyKaraoke.UI.BindingModules
 
 			builder.RegisterType<NerderyKaraokeDbContext>()
 				.AsSelf()
-				.SingleInstance();
+				.InstancePerRequest();
 
 			builder.RegisterType<SongRequestRepository>()
 				.As<IRepository<SongRequest>>()
-				.InstancePerRequest();
-
-			builder.RegisterType<UserRoleRepository>()
-				.As<IRepository<UserRole>>()
 				.InstancePerRequest();
 
 			builder.RegisterType<SongRequestManager>()

@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace NerderyKaraoke.UI.Models.Shared
+namespace NerderyKaraoke.UI.Models.SongRequest
 {
-	public class SongRequestViewModel
+	public class EditViewModel
 	{
+		[Required]
 		public Guid Id { get; set; }
 
 		[Required]
@@ -19,6 +20,5 @@ namespace NerderyKaraoke.UI.Models.Shared
 		[DisplayName("YouTube link")]
 		public string YouTubeUrl { get; set; }
 
-		public int RequestOrder { get; set; }
 	}
 }

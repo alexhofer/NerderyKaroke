@@ -16,9 +16,14 @@ namespace NerderyKaraoke.Core.Services
 				throw new ArgumentNullException();
 		}
 
-		public IQueryable<SongRequest> Get()
+		public IQueryable<SongRequest> GetAll()
 		{
 			return _songRepository.GetAll();
+		}
+
+		public SongRequest Get(Guid id)
+		{
+			return _songRepository.Find(id);
 		}
 
 		public void Add(SongRequest entity)
@@ -41,7 +46,7 @@ namespace NerderyKaraoke.Core.Services
 
 		public void DeleteAll()
 		{
-			foreach(var song in Get())
+			foreach(var song in GetAll().ToList())
 				Delete(song);
 			_songRepository.Save();
 		}

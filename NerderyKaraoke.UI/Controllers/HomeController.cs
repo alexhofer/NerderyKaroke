@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 
 using NerderyKaraoke.Core.Services;
-using NerderyKaraoke.UI.Models.Shared;
+using NerderyKaraoke.UI.Extensions;
+using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Controllers
 {
@@ -17,17 +19,17 @@ namespace NerderyKaraoke.UI.Controllers
 		{
 			_songRequestManager = songRequestManager;
 			if (_songRequestManager == null)
-				throw new ArgumentNullException();
+				throw new ArgumentNullException(nameof(songRequestManager));
 
 			_mapper = mapper;
 			if (_mapper == null)
-				throw new ArgumentNullException();
+				throw new ArgumentNullException(nameof(mapper));
 		}
 
 		public ActionResult Index()
 		{
-			var data = _songRequestManager.Get();
-			var model = _mapper.Map<IEnumerable<SongRequestViewModel>>(data);
+			var songRequests = _songRequestManager.GetAll().FairOrder();
+			var model = _mapper.Map<IEnumerable<CreateViewModel>>(songRequests);
 
 			return View(model);
 		}

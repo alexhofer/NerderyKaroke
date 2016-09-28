@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 
 using NerderyKaraoke.Core.Data.Models;
-using NerderyKaraoke.UI.Models.Shared;
+using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Profiles
 {
@@ -9,7 +9,11 @@ namespace NerderyKaraoke.UI.Profiles
 	{
 		public ViewModelMappingProfile()
 		{
-			CreateMap<SongRequest, SongRequestViewModel>()
+			CreateMap<SongRequest, CreateViewModel>()
+				.ReverseMap();
+			CreateMap<SongRequest, EditViewModel>()
+				.ReverseMap();
+			CreateMap<SongRequest, DeleteViewModel>()
 				.ReverseMap();
 		}
 	}
