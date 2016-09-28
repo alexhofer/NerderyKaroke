@@ -1,5 +1,5 @@
 ﻿@using NerderyKaraoke.UI.Models.SongRequest
-@model IEnumerable<CreateViewModel>
+@model IEnumerable<EditViewModel>
 
 @{
 		ViewBag.Title = "Home Page";
@@ -9,8 +9,11 @@
 
 @if (Model.Any())
 {
-	<table class="table">
+	var firstItemId = Model.FirstOrDefault()?.Id;
+
+	<table class="table table-hover">
 		<tr>
+			<th></th>
 			<th>
 				@Html.DisplayNameFor(m => m.SingerName)
 			</th>
@@ -24,7 +27,15 @@
 
 		@foreach (var item in Model)
 		{
-			<tr>
+			var success = firstItemId == item.Id ? "success" : string.Empty;
+
+			<tr class="@success">
+				<td class="text-center">
+					@if (firstItemId == item.Id)
+					{
+						<i class="glyphicon glyphicon-music"></i>
+					}
+				</td>
 				<td>
 					@Html.DisplayFor(m => item.SingerName)
 				</td>

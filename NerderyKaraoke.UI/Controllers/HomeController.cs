@@ -30,7 +30,7 @@ namespace NerderyKaraoke.UI.Controllers
 		public ActionResult Index()
 		{
 			var songRequests = _songRequestManager.GetAll().FairOrder();
-			var model = _mapper.Map<IEnumerable<CreateViewModel>>(songRequests);
+			var model = _mapper.Map<IEnumerable<EditViewModel>>(songRequests);
 
 			return View(model);
 		}
