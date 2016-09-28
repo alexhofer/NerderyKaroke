@@ -26,11 +26,11 @@ namespace NerderyKaroke.Controllers
 
         // POST: SuperSecretAdmin/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, SongModel editedModel)
+        public ActionResult Edit(int id, Song edited)
         {
             try
             {
-                JSONService.UpdateEntry(id, editedModel);
+                JSONService.UpdateEntry(id, edited);
 
                 return RedirectToAction("Index");
             }
@@ -49,7 +49,7 @@ namespace NerderyKaroke.Controllers
 
         // POST: SuperSecretAdmin/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, SongModel toBeDeleted)
+        public ActionResult Delete(int id, Song toBeDeleted)
         {
             try
             {

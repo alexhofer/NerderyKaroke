@@ -1,10 +1,7 @@
-﻿using NerderyKaroke.Models;
+﻿using System.Web.Mvc;
+
+using NerderyKaroke.Models;
 using NerderyKaroke.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 
 namespace NerderyKaroke.Controllers
 {
@@ -18,7 +15,7 @@ namespace NerderyKaroke.Controllers
 
         // POST: Submit/Create
         [HttpPost]
-        public ActionResult Create(SongModel model)
+        public ActionResult Create(Song model)
         {
             try
             {

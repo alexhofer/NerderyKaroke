@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NerderyKaroke.Models.SongModel>
+﻿@model IEnumerable<NerderyKaroke.Models.Song>
 
 @{
     ViewBag.Title = "Song List";
@@ -16,7 +16,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.SongTitle)
             </th>
-            <th></th>
         </tr>
    
         @foreach (var item in Model)
