@@ -1,5 +1,4 @@
-﻿@using NerderyKaraoke.UI.Models.SongRequest
-@model IEnumerable<EditViewModel>
+﻿@model IEnumerable<NerderyKaraoke.UI.Models.SongRequest.EditViewModel>
 
 @{
 	ViewBag.Title = "Admin";
@@ -44,6 +43,5 @@
 		}
 	</table>
 
-	@Html.ActionLink("Delete All Songs", "DeleteAll", "SongRequest", null, new { @class="btn btn-danger" })
+	@Html.ActionLink("Delete All Songs", "DeleteAll", "SongRequest", null, new {@class = "btn btn-danger"})
 }
-

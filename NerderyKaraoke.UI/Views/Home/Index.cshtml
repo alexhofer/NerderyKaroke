@@ -1,8 +1,7 @@
-﻿@using NerderyKaraoke.UI.Models.SongRequest
-@model IEnumerable<EditViewModel>
+﻿@model IEnumerable<NerderyKaraoke.UI.Models.SongRequest.EditViewModel>
 
 @{
-		ViewBag.Title = "Home Page";
+	ViewBag.Title = "Home Page";
 }
 
 <h2>Singers and Songs</h2>
@@ -57,4 +56,4 @@ else
 	<h3>No songs found. Go submit one already!</h3>
 }
 
-@Html.ActionLink("Submit Song", "Create", "SongRequest", null, new { @class = "btn btn-info" })
+@Html.ActionLink("Submit Song", "Create", "SongRequest", null, new {@class = "btn btn-info"})

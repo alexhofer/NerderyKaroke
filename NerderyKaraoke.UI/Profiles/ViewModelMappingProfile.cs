@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-
 using NerderyKaraoke.Core.Data.Models;
 using NerderyKaraoke.UI.Models.SongRequest;
 

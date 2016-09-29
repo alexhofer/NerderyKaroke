@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-
 using AutoMapper;
-
 using NerderyKaraoke.Core.Data.Models;
 using NerderyKaraoke.Core.Extensions;
 using NerderyKaraoke.Core.Services;
@@ -13,8 +11,8 @@ namespace NerderyKaraoke.UI.Controllers
 	[Authorize(Roles = "Administrator")]
 	public class SongRequestController : Controller
 	{
-		private readonly ISongRequestManager _songRequestManager;
 		private readonly IMapper _mapper;
+		private readonly ISongRequestManager _songRequestManager;
 
 		public SongRequestController(IMapper mapper, ISongRequestManager songRequestManager)
 		{
@@ -120,7 +118,6 @@ namespace NerderyKaraoke.UI.Controllers
 			}
 
 			return RedirectToAction("Index", "Admin");
-
 		}
 
 		// GET: SongRequest/DeleteAll
@@ -148,5 +145,4 @@ namespace NerderyKaraoke.UI.Controllers
 			return RedirectToAction("Index", "Admin");
 		}
 	}
-
 }

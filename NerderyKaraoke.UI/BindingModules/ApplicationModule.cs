@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using AutoMapper;
-
 using NerderyKaraoke.UI.Profiles;
 
 namespace NerderyKaraoke.UI.BindingModules

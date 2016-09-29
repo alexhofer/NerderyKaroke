@@ -1,5 +1,4 @@
-﻿@using NerderyKaraoke.UI.Models.SongRequest
-@model DeleteViewModel
+﻿@model NerderyKaraoke.UI.Models.SongRequest.DeleteViewModel
 @{
 	ViewBag.Title = "Delete";
 }
@@ -10,7 +9,7 @@
 
 <div>
 	<h4>Song Request</h4>
-	<hr />
+	<hr/>
 	<dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(m => m.SingerName)
@@ -41,9 +40,8 @@
 
 		<div class="form-actions no-color">
 			<button type="submit" class="btn btn-info">Delete</button>
-			@Html.ActionLink("Cancel", "Index", "Admin", null, new { @class = "btn btn-default"})
+			@Html.ActionLink("Cancel", "Index", "Admin", null, new {@class = "btn btn-default"})
 		</div>
-
 	}
 
 </div>

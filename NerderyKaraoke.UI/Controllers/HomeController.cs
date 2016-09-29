@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-
 using AutoMapper;
-
 using NerderyKaraoke.Core.Services;
 using NerderyKaraoke.UI.Models.SongRequest;
 
@@ -12,8 +10,8 @@ namespace NerderyKaraoke.UI.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ISongRequestManager _songRequestManager;
 		private readonly IMapper _mapper;
+		private readonly ISongRequestManager _songRequestManager;
 
 		public HomeController(ISongRequestManager songRequestManager, IMapper mapper)
 		{

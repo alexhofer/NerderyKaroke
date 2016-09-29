@@ -2,7 +2,6 @@
 using System.Configuration.Provider;
 using System.Linq;
 using System.Web.Security;
-
 using NerderyKaraoke.Core.Data;
 using NerderyKaraoke.Core.Data.Models;
 using NerderyKaraoke.Core.Data.Repositories;
@@ -19,6 +18,8 @@ namespace NerderyKaraoke.UI.Providers
 			_adminRepository = new UserRoleRepository(context);
 		}
 
+		public override string ApplicationName { get; set; }
+
 		public override bool IsUserInRole(string username, string roleName)
 		{
 			var entry = _adminRepository.Find(username, roleName);
@@ -28,9 +29,9 @@ namespace NerderyKaraoke.UI.Providers
 		public override string[] GetRolesForUser(string username)
 		{
 			var roles = _adminRepository
-									.FindBy(ur => string.Equals(ur.UserName, username))
-									.Select(ur => ur.Role)
-									.ToArray();
+				.FindBy(ur => string.Equals(ur.UserName, username))
+				.Select(ur => ur.Role)
+				.ToArray();
 			return roles;
 		}
 
@@ -54,7 +55,7 @@ namespace NerderyKaraoke.UI.Providers
 			if (!roleNames.Any(RoleExists))
 				throw new ProviderException("Role does not exist.");
 
-			foreach (var entry in usernames.SelectMany(u => roleNames.Select(r => new UserRole {UserName = u, Role = r })))
+			foreach (var entry in usernames.SelectMany(u => roleNames.Select(r => new UserRole {UserName = u, Role = r})))
 			{
 				_adminRepository.InsertOrUpdate(entry);
 			}
@@ -73,33 +74,33 @@ namespace NerderyKaraoke.UI.Providers
 
 		public override string[] GetUsersInRole(string roleName)
 		{
-			if(!RoleExists(roleName))
+			if (!RoleExists(roleName))
 				throw new ProviderException("Role does not exist.");
 
 			var users = _adminRepository
-									.GetAll()
-									.Select(ur => ur.UserName)
-									.ToArray();
+				.GetAll()
+				.Select(ur => ur.UserName)
+				.ToArray();
 
 			return users;
 		}
 
 		public override string[] GetAllRoles()
 		{
-			return new[] { "Administrator" };
+			return new[] {"Administrator"};
 		}
 
 		public override string[] FindUsersInRole(string roleName, string usernameToMatch)
 		{
-			if(!RoleExists(roleName))
+			if (!RoleExists(roleName))
 				throw new ProviderException("Role does not exist.");
 
-			var users = _adminRepository.FindBy(ur => string.Equals(ur.Role, roleName, StringComparison.OrdinalIgnoreCase) && ur.UserName.Contains(usernameToMatch))
-									.Select(ur => ur.UserName)
-									.ToArray();
+			var users =
+				_adminRepository.FindBy(
+					ur => string.Equals(ur.Role, roleName, StringComparison.OrdinalIgnoreCase) && ur.UserName.Contains(usernameToMatch))
+					.Select(ur => ur.UserName)
+					.ToArray();
 			return users;
 		}
-
-		public override string ApplicationName { get; set; }
 	}
 }

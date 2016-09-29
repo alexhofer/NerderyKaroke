@@ -1,5 +1,4 @@
 ﻿using Autofac;
-
 using NerderyKaraoke.Core.Data;
 using NerderyKaraoke.Core.Data.Models;
 using NerderyKaraoke.Core.Data.Repositories;

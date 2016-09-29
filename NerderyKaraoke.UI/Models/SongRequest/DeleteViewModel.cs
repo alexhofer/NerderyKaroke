@@ -17,6 +17,5 @@ namespace NerderyKaraoke.UI.Models.SongRequest
 
 		[DisplayName("YouTube link")]
 		public string YouTubeUrl { get; set; }
-
 	}
 }
