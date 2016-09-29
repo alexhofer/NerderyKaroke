@@ -3,7 +3,7 @@ using System.Linq;
 
 using NerderyKaraoke.Core.Data.Models;
 
-namespace NerderyKaraoke.UI.Extensions
+namespace NerderyKaraoke.Core.Data.Extensions
 {
 	public static class SortingExtensions
 	{

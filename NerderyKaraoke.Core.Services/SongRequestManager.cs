@@ -2,6 +2,7 @@
 using System.Linq;
 
 using NerderyKaraoke.Core.Data;
+using NerderyKaraoke.Core.Data.Extensions;
 using NerderyKaraoke.Core.Data.Models;
 
 namespace NerderyKaraoke.Core.Services
@@ -30,6 +31,17 @@ namespace NerderyKaraoke.Core.Services
 		public void Add(SongRequest entity)
 		{
 			_songRepository.InsertOrUpdate(entity);
+			_songRepository.Save();
+		}
+
+		public void FairAdd(SongRequest entity)
+		{
+			Add(entity);
+			var songRequests = GetAll().FairOrder();
+			foreach (var songRequest in songRequests)
+			{
+				_songRepository.InsertOrUpdate(songRequest);
+			}
 			_songRepository.Save();
 		}
 

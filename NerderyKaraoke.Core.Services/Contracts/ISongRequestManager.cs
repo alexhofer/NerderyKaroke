@@ -13,5 +13,6 @@ namespace NerderyKaraoke.Core.Services
 		void Update(SongRequest entity);
 		void Delete(SongRequest entity);
 		void DeleteAll();
+		void FairAdd(SongRequest entity);
 	}
 }

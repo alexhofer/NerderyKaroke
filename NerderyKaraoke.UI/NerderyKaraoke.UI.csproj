@@ -214,7 +214,6 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SongRequestController.cs" />
-    <Compile Include="Extensions\SortingExtensions.cs" />
     <Compile Include="Models\SongRequest\CreateViewModel.cs" />
     <Compile Include="Models\SongRequest\DeleteViewModel.cs" />
     <Compile Include="Models\SongRequest\EditViewModel.cs" />

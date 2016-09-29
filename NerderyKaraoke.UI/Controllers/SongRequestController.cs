@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
 
 using AutoMapper;
@@ -7,7 +6,6 @@ using AutoMapper;
 using NerderyKaraoke.Core.Data.Models;
 using NerderyKaraoke.Core.Extensions;
 using NerderyKaraoke.Core.Services;
-using NerderyKaraoke.UI.Extensions;
 using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Controllers
@@ -48,13 +46,7 @@ namespace NerderyKaraoke.UI.Controllers
 			try
 			{
 				var request = _mapper.Map<SongRequest>(songRequest);
-				_songRequestManager.Add(request);
-				var songRequests = _songRequestManager.GetAll().FairOrder();
-
-				foreach (var item in songRequests)
-				{
-					_songRequestManager.Update(item);
-				}
+				_songRequestManager.FairAdd(request);
 			}
 			catch (Exception ex)
 			{

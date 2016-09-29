@@ -47,6 +47,7 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Contracts\IHasId.cs" />
     <Compile Include="Contracts\IRepository.cs" />
+    <Compile Include="Extensions\SortingExtensions.cs" />
     <Compile Include="Migrations\201609221507158_InitialSchema.cs" />
     <Compile Include="Migrations\201609221507158_InitialSchema.Designer.cs">
       <DependentUpon>201609221507158_InitialSchema.cs</DependentUpon>

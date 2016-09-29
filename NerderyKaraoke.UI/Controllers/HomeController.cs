@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using AutoMapper;
 
 using NerderyKaraoke.Core.Services;
-using NerderyKaraoke.UI.Extensions;
 using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Controllers

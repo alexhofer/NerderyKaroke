@@ -7,7 +7,7 @@ using Omu.ValueInjecter.Utils;
 
 namespace NerderyKaraoke.Core.Extensions
 {
-	public static class MappingExtensions
+	public static class InjectionExtensions
 	{
 		public static T InjectFrom<T>(this T target, params object[] source)
 		{
