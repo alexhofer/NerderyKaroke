@@ -27,9 +27,9 @@
 
 		@foreach (var item in Model)
 		{
-			var success = firstItemId == item.Id ? "success" : string.Empty;
+			var isFirstItem = firstItemId == item.Id;
 
-			<tr class="@success">
+			<tr class="@(isFirstItem ? "success" : string.Empty)">
 				<td class="text-center">
 					@if (firstItemId == item.Id)
 					{
