@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 using AutoMapper;
@@ -10,7 +11,6 @@ using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Controllers
 {
-	[AllowAnonymous]
 	public class HomeController : Controller
 	{
 		private readonly ISongRequestManager _songRequestManager;
@@ -29,7 +29,7 @@ namespace NerderyKaraoke.UI.Controllers
 
 		public ActionResult Index()
 		{
-			var songRequests = _songRequestManager.GetAll().FairOrder();
+			var songRequests = _songRequestManager.GetAll().OrderBy(i => i.RequestOrder);
 			var model = _mapper.Map<IEnumerable<EditViewModel>>(songRequests);
 
 			return View(model);

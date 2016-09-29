@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 using AutoMapper;
 
 using NerderyKaraoke.Core.Services;
-using NerderyKaraoke.UI.Extensions;
 using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Controllers
@@ -30,7 +30,7 @@ namespace NerderyKaraoke.UI.Controllers
 		// GET: Admin
 		public ActionResult Index()
 		{
-			var songRequests = _songRequestManager.GetAll().FairOrder();
+			var songRequests = _songRequestManager.GetAll().OrderBy(i => i.RequestOrder);
 			var model = _mapper.Map<IEnumerable<EditViewModel>>(songRequests);
 			return View(model);
 		}

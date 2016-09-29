@@ -7,6 +7,7 @@ using AutoMapper;
 using NerderyKaraoke.Core.Data.Models;
 using NerderyKaraoke.Core.Extensions;
 using NerderyKaraoke.Core.Services;
+using NerderyKaraoke.UI.Extensions;
 using NerderyKaraoke.UI.Models.SongRequest;
 
 namespace NerderyKaraoke.UI.Controllers
@@ -16,8 +17,6 @@ namespace NerderyKaraoke.UI.Controllers
 	{
 		private readonly ISongRequestManager _songRequestManager;
 		private readonly IMapper _mapper;
-
-		private static readonly object _lock = new object();
 
 		public SongRequestController(IMapper mapper, ISongRequestManager songRequestManager)
 		{
@@ -46,20 +45,21 @@ namespace NerderyKaraoke.UI.Controllers
 			if (!ModelState.IsValid)
 				return View(songRequest);
 
-			lock (_lock)
+			try
 			{
-				try
+				var request = _mapper.Map<SongRequest>(songRequest);
+				_songRequestManager.Add(request);
+				var songRequests = _songRequestManager.GetAll().FairOrder();
+
+				foreach (var item in songRequests)
 				{
-					var lastSongOrder = _songRequestManager.GetAll().OrderByDescending(x => x.RequestOrder).FirstOrDefault()?.RequestOrder;
-					var request = _mapper.Map<SongRequest>(songRequest);
-					request.RequestOrder = lastSongOrder.GetValueOrDefault() + 1;
-					_songRequestManager.Add(request);
+					_songRequestManager.Update(item);
 				}
-				catch (Exception ex)
-				{
-					ModelState.AddModelError(string.Empty, ex.Message);
-					return View(songRequest);
-				}
+			}
+			catch (Exception ex)
+			{
+				ModelState.AddModelError(string.Empty, ex.Message);
+				return View(songRequest);
 			}
 
 			return RedirectToAction("Index", "Home");
