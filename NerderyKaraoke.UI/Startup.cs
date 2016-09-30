@@ -2,9 +2,11 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Microsoft.Owin;
-using NerderyKaraoke.UI;
+
 using Owin;
+using Microsoft.Owin;
+
+using NerderyKaraoke.UI;
 
 [assembly: OwinStartup(typeof (Startup))]
 
