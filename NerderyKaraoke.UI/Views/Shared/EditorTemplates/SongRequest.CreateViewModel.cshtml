@@ -1,0 +1,28 @@
+﻿@model NerderyKaraoke.UI.Models.SongRequest.CreateViewModel
+
+<div class="form-group">
+	@Html.LabelFor(m => m.SingerName, new {@class = "control-label col-md-2"})
+
+	<div class="col-md-10">
+		@Html.EditorFor(m => m.SingerName, new {htmlAttribudes = new {@class = "form-control"}})
+		@Html.ValidationMessageFor(m => m.SingerName, "", new {@class = "text-danger"})
+	</div>
+</div>
+
+<div class="form-group">
+	@Html.LabelFor(m => m.SongTitle, new {@class = "control-label col-md-2"})
+
+	<div class="col-md-10">
+		@Html.EditorFor(m => m.SongTitle, new {htmlAttribudes = new {@class = "form-control"}})
+		@Html.ValidationMessageFor(m => m.SongTitle, "", new {@class = "text-danger"})
+	</div>
+</div>
+
+<div class="form-group">
+	@Html.LabelFor(m => m.YouTubeUrl, new {@class = "control-label col-md-2"})
+
+	<div class="col-md-10">
+		@Html.EditorFor(m => m.YouTubeUrl, new {htmlAttribudes = new {@class = "form-control"}})
+		@Html.ValidationMessageFor(m => m.YouTubeUrl, "", new {@class = "text-danger"})
+	</div>
+</div>

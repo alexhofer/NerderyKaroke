@@ -1,0 +1,29 @@
+﻿@model NerderyKaraoke.UI.Models.SongRequest.CreateViewModel
+@{
+	ViewBag.Title = "Create";
+}
+
+<h2>Submit a Song!</h2>
+
+@using (Html.BeginForm("Create", "SongRequest", FormMethod.Post))
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		@Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+		@Html.EditorForModel("SongRequest.CreateViewModel")
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button class="btn btn-info" type="submit">Create</button>
+				@Html.ActionLink("Cancel", "Index", "Home", null, new {@class = "btn btn-default"})
+			</div>
+		</div>
+
+	</div>
+}
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

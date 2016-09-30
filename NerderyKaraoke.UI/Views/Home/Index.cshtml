@@ -1,0 +1,59 @@
+﻿@model IEnumerable<NerderyKaraoke.UI.Models.SongRequest.EditViewModel>
+
+@{
+	ViewBag.Title = "Home Page";
+}
+
+<h2>Singers and Songs</h2>
+
+@if (Model.Any())
+{
+	var firstItemId = Model.FirstOrDefault()?.Id;
+
+	<table class="table table-hover">
+		<tr>
+			<th></th>
+			<th>
+				@Html.DisplayNameFor(m => m.SingerName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.SongTitle)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.YouTubeUrl)
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			var isFirstItem = firstItemId == item.Id;
+
+			<tr class="@(isFirstItem ? "success" : string.Empty)">
+				<td class="text-center">
+					@if (firstItemId == item.Id)
+					{
+						<i class="glyphicon glyphicon-music"></i>
+					}
+				</td>
+				<td>
+					@Html.DisplayFor(m => item.SingerName)
+				</td>
+				<td>
+					@Html.DisplayFor(m => item.SongTitle)
+				</td>
+				<td>
+					<a href="@item.YouTubeUrl">
+						@Html.DisplayFor(m => item.YouTubeUrl)
+					</a>
+				</td>
+			</tr>
+		}
+
+	</table>
+}
+else
+{
+	<h3>No songs found. Go submit one already!</h3>
+}
+
+@Html.ActionLink("Submit Song", "Create", "SongRequest", null, new {@class = "btn btn-info"})

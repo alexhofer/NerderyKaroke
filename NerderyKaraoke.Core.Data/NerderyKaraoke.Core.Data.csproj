@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5BB46B35-87B1-480F-808C-44E26BA0A3DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NerderyKaraoke.Core.Data</RootNamespace>
+    <AssemblyName>NerderyKaraoke.Core.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="Contracts\IHasId.cs" />
+    <Compile Include="Contracts\IRepository.cs" />
+    <Compile Include="Extensions\SortingExtensions.cs" />
+    <Compile Include="Migrations\201609221507158_InitialSchema.cs" />
+    <Compile Include="Migrations\201609221507158_InitialSchema.Designer.cs">
+      <DependentUpon>201609221507158_InitialSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609252005519_SongRequestIdentityFix.cs" />
+    <Compile Include="Migrations\201609252005519_SongRequestIdentityFix.Designer.cs">
+      <DependentUpon>201609252005519_SongRequestIdentityFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609260006031_SongRequestTimestamp.cs" />
+    <Compile Include="Migrations\201609260006031_SongRequestTimestamp.Designer.cs">
+      <DependentUpon>201609260006031_SongRequestTimestamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609260631326_UserRoleEntityCreation.cs" />
+    <Compile Include="Migrations\201609260631326_UserRoleEntityCreation.Designer.cs">
+      <DependentUpon>201609260631326_UserRoleEntityCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Models\SongRequest.cs" />
+    <Compile Include="NerderyKaraokeDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\SongRequestRepository.cs" />
+    <Compile Include="Repositories\UserRoleRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609221507158_InitialSchema.resx">
+      <DependentUpon>201609221507158_InitialSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609252005519_SongRequestIdentityFix.resx">
+      <DependentUpon>201609252005519_SongRequestIdentityFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609260006031_SongRequestTimestamp.resx">
+      <DependentUpon>201609260006031_SongRequestTimestamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609260631326_UserRoleEntityCreation.resx">
+      <DependentUpon>201609260631326_UserRoleEntityCreation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
